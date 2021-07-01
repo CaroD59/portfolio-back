@@ -1,10 +1,8 @@
 {
-  "name": "backend",
+  "name": "checkpoint-3-node-2021-fromscratch",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
-  "keywords": [],
-  "author": "Caroline Dorchies",
-  "license": "ISC",
   "scripts": {
     "test": "NODE_ENV=test jest",
     "start": "node src/index.js",
@@ -12,58 +10,32 @@
     "prettier": "pretty-quick --staged",
     "lint": "lint-staged"
   },
-  "eslintConfig": {
-    "extends": "airbnb-base",
-    "env": {
-      "es6": true,
-      "node": true
-    },
-    "rules": {
-      "brace-style": [
-        "error",
-        "stroustrup"
-      ]
-    }
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.12",
+    "@types/jest": "^26.0.23",
+    "eslint": "^7.28.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
+    "jest": "^27.0.4",
+    "lint-staged": "^11.0.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.3.1",
+    "pretty-quick": "^3.1.0",
+    "supertest": "^6.1.3"
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^9.0.2",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "mysql": "^2.18.1",
-    "mysql2": "^2.2.5",
-    "nodemon": "^2.0.7"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.13.15",
-    "eslint": "^7.23.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-prettier": "^8.1.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.23.1",
-    "eslint-plugin-prettier": "^3.3.1",
-    "husky": "4.3.8",
-    "lint-staged": "^10.5.4",
-    "prettier": "^2.2.1"
+    "mysql2": "^2.2.5"
   },
   "lint-staged": {
-    "**/*.js": [
-      "eslint --ext .js --fix",
-      "prettier --write"
+    "src/**/*.{js,json}": [
+      "./node_modules/.bin/eslint --max-warnings=5",
+      "pretty-quick --staged"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CaroD59/portfolio-back.git"
-  },
-  "bugs": {
-    "url": "https://github.com/CaroD59/portfolio-back/issues"
-  },
-  "homepage": "https://github.com/CaroD59/portfolio-back#readme",
-  "description": ""
+  }
 }

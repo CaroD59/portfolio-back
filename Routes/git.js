@@ -8,3 +8,5 @@ router.get('/', async (req, res) => {
   const [results] = await db.query(sql);
   res.json(results);
 });
+
+module.exports = router;
